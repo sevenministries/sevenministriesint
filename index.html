@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Seven Ministries International School | Quality Christian Education for Ages 3-18</title>
+  <meta name="title" content="Seven Ministries International School | Quality Christian Education for Ages 3-18">
+  <meta name="description"
+    content="Providing quality British & American education with Christian values for children ages 3-18. Online learning and physical campuses in UK and Ghana.">
+  <meta name="keywords"
+    content="Christian school, international education, online schooling, British curriculum, American curriculum, Ghana education, UK education, homeschooling, religious education">
+  <meta name="author" content="Seven Ministries International School">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sevenministriesschool.com/">
+  <meta property="og:title" content="Seven Ministries International School | Quality Christian Education">
+  <meta property="og:description"
+    content="Providing quality British & American education with Christian values for children ages 3-18. Online learning and physical campuses in UK and Ghana.">
+  <meta property="og:image" content="https://sevenministriesschool.com/logo.jpeg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://sevenministriesschool.com/">
+  <meta property="twitter:title" content="Seven Ministries International School | Quality Christian Education">
+  <meta property="twitter:description"
+    content="Providing quality British & American education with Christian values for children ages 3-18.">
+  <meta property="twitter:image" content="https://sevenministriesschool.com/logo.jpeg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sevenministriesschool.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Seven Ministries International School",
+    "url": "https://sevenministriesschool.com",
+    "logo": "https://sevenministriesschool.com/logo.jpeg",
+    "description": "Providing quality British & American education with Christian values for children ages 3-18",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London, Accra",
+      "addressCountry": "UK, Ghana"
+    },
+    "email": "edu.sevenministries@gmail.com",
+    "telephone": "+233500693889",
+    "sameAs": [
+      "https://www.facebook.com/sevenministriesschool",
+      "https://www.instagram.com/sevenministriesschool",
+      "https://twitter.com/sevenministriesschool",
+      "https://www.youtube.com/sevenministriesschool"
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hero = document.querySelector(".hero-section");
+    const dotsContainer = document.querySelector(".slider-dots");
+
+    if (!hero || !dotsContainer) {
+      console.error("Hero or dots container not found");
+      return;
+    }
+
+    const images = [
+      "images/home-0.jpg",
+      "images/home-1.jpg",
+      "images/home-2.jpg",
+      "images/home-3.jpg",
+      "images/home-4.jpg"
+    ];
+
+
+    let index = 0;
+    let interval;
+
+    function setSlide(i) {
+      index = i;
+      hero.style.backgroundImage = `url("${images[index]}")`;
+      hero.style.backgroundSize = "cover";
+      hero.style.backgroundPosition = "center";
+      updateDots();
+    }
+
+    function updateDots() {
+      document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    function startSlider() {
+      interval = setInterval(() => {
+        index = (index + 1) % images.length;
+        setSlide(index);
+      }, 5000);
+    }
+
+    // create dots
+    images.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.addEventListener("click", () => {
+        clearInterval(interval);
+        setSlide(i);
+        startSlider();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    setSlide(0);
+    startSlider();
+  });
+</script>
+
+
+
+<body class="home-page">
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-icon"><img src="logo.jpeg" alt="Seven Ministries Logo" style="width: 40px; height: 40px;" />
+        </div>
+        <div class="logo-text">
+          SEVEN MINISTRIES<br>INTERNATIONAL SCHOOL</br>
+        </div>
+
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="curriculum.html" class="nav-link">Curriculum</a></li>
+        <li><a href="locations.html" class="nav-link">Locations</a></li>
+        <li><a href="training.html" class="nav-link">Training</a></li>
+        <li><a href="founder.html" class="nav-link">Founder</a></li>
+        <li><a href="enrolment.html" class="nav-link">Enrolment</a></li>
+        <li><a href="fee.html" class="nav-link">Fee Structure</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <!--<button class="nav-btn">Apply Now</button>-->
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+
+  <section class="hero-section home-hero">
+    <div class="hero">
+      <h2>Raising Godly, Confident and Purpose‑Driven Leaders</h2>
+      <p>Quality British & American education for children aged 3–18, delivered safely online and in person.</p>
+      <div class="hero-buttons">
+        <a href="enrolment.html" class="btn primary-btn">Enroll Now</a>
+        <a href="donate.html" class="btn donate-btn">
+          <i class="fas fa-heccart"></i> Donate to Sponsor a Child</a>
+        <a href="contact.html" class="btn primary-btn">Enquire Now</a>
+
+      </div>
+    </div>
+    <div class="slider-dots"></div>s
+
+  </section>
+
+
+
+
+  <!--MADAM VERONICA'S CHANGES-->
+
+  <section class="programs">
+    <h2 class="section-title">Our Service</h2>
+
+    <div class="program-card">
+      <img src="images/apply-here-1.jpg" alt="Online Computer Classes">
+
+      <a href="online-school.html" class="apply-btn">
+        ONLINE SCHOOL
+      </a>
+    </div>
+
+    <div class="program-card">
+      <img src="images/apply-here-2.jpg" alt="Online Programme">
+
+      <a href="after-school.html" class="apply-btn">
+        AFTER-SCHOOL CLUB
+      </a>
+    </div>
+
+
+    <div class="program-card">
+      <img src="images/apply-here-4.jpg" alt="Online Programme">
+
+      <a href="music-club.html" class="apply-btn">
+        MUSIC CLUB
+      </a>
+    </div>
+
+    <div class="program-card">
+      <img src="images/apply-here-5.jpg" alt="Online Programme">
+
+      <a href="post-secondary.html" class="apply-btn">
+        POST-SECONDARY<br>SCHOOL EDUCATION</br>
+      </a>
+    </div>
+
+
+  </section>
+
+
+
+
+  <footer class="footer-flat">
+
+    <a href="https://wa.me/233500693889" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+
+      <span class="whatsapp-tooltip">Chat with us</span>
+      <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+
+    <div class="footer-inner">
+
+      <!-- Left: Logo -->
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="Seven Ministries Logo">
+        <span>Seven Ministries International School</span>
+      </div>
+
+      <!-- Center: Links -->
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="enrolment.html">Enroll</a></li>
+      </ul>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+
+
+      <p>
+        <a href="mailto:admissions@sevenministriesint.com" class="footer-email">
+          admissions@sevenministriesint.com
+        </a>
+        | WhatsApp: +233500693889
+      </p>
+
+      <!-- Right: Contact -->
+      <div class="footer-contact">
+        <span>© 2026 Seven Ministries International School. All rights reserved.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

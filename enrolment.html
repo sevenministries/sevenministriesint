@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enrolment - Seven Ministries International School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .hero-section {
+      pointer-events: none;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section {
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hero = document.querySelector(".hero-section");
+      const dotsContainer = document.querySelector(".slider-dots");
+
+      const images = [
+        "images/enrolment-1.jpg",
+        "images/enrolment-2.jpg",
+        "images/enrolment-3.jpg",
+        "images/enrolment-4.jpg",
+        "images/enrolment-5.jpg"
+      ];
+
+      let index = 0;
+      let interval;
+
+      function setSlide(i) {
+        index = i;
+        hero.style.backgroundImage = `url('${images[index]}')`;
+        updateDots();
+      }
+
+      function updateDots() {
+        document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+      }
+
+      function startSlider() {
+        interval = setInterval(() => {
+          index = (index + 1) % images.length;
+          setSlide(index);
+        }, 5000);
+      }
+
+      images.forEach((_, i) => {
+        const dot = document.createElement("span");
+        dot.addEventListener("click", () => {
+          clearInterval(interval);
+          setSlide(i);
+          startSlider();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      setSlide(0);
+      startSlider();
+
+      // Tabs functionality
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tab = btn.dataset.tab;
+          tabButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          tabContents.forEach(c => c.classList.remove('active'));
+          document.getElementById(tab + '-form').classList.add('active');
+        });
+      });
+    });
+  </script>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-icon"><img src="logo.jpeg" alt="Seven Ministries Logo" style="width: 40px; height: 40px;" />
+        </div>
+        <div class="logo-text">SEVEN MINISTRIES<br>INTERNATIONAL SCHOOL</div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="curriculum.html" class="nav-link">Curriculum</a></li>
+        <li><a href="locations.html" class="nav-link">Locations</a></li>
+        <li><a href="training.html" class="nav-link">Training</a></li>
+        <li><a href="founder.html" class="nav-link">Founder</a></li>
+        <li><a href="enrolment.html" class="nav-link">Enrolment</a></li>
+        <li><a href="fee.html" class="nav-link">Fee Structure</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero">
+      <h2>Enrolment Forms</h2>
+      <p>Begin your educational journey with Seven Ministries International School</p>
+    </div>
+    <div class="slider-dots"></div>
+  </section>
+
+  <!-- Enrolment Tabs -->
+  <section>
+    <h2 class="section-title">Choose Your Program</h2>
+    <p class="section-description">Our enrolment procedure is quick and easy. Fill out our online form and we will be in
+      touch.</p>
+
+    <div class="enrollment-tabs">
+      <div class="tab-header">
+        <button class="tab-btn active" data-tab="general">General Enrolment</button>
+        <button class="tab-btn" data-tab="after-school">After School Club</button>
+        <button class="tab-btn" data-tab="post-secondary">Post-Secondary Programme</button>
+      </div>
+
+      <!-- General Enrolment Form -->
+      <div class="tab-content active" id="general-form">
+        <form id="general-enrollment-form">
+          <div class="form-success">
+            Thank you! Your enrollment request has been submitted successfully. Our team will contact you shortly.
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="child-name">Child's Full Name *</label>
+              <input type="text" id="child-name" name="childName" placeholder="First and Last name" required />
+            </div>
+            <div class="form-group">
+              <label for="child-age">Child's Age *</label>
+              <input type="number" id="child-age" name="childAge" min="3" max="18" required />
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+
+          <div class="form-group full">
+            <label for="education">Educational Background</label>
+            <textarea id="education" name="education" placeholder="Current education and any special needs"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="parent-name">Parent/Guardian Name *</label>
+              <input type="text" id="parent-name" name="parentName" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="Include WhatsApp" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="country">Country *</label>
+              <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="Ghana">Ghana</option>
+                <option value="USA">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="address">Occupation *</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+
+          <div class="form-group full">
+            <label for="program">Program of Interest *</label>
+            <select id="program" name="program" required>
+              <option value="">Select Program</option>
+              <option value="Online School">Online School</option>
+              <option value="Homework Club">Homework Club</option>
+              <option value="Music Club">Music Club</option>
+              <option value="Keyboard/Piano Lessons">Keyboard/Piano Lessons</option>
+              <option value="Coding Club">Coding Club</option>
+              <option value="Art and Crafts Club">Art and Crafts Club</option>
+              <option value="African Beading Club">African Beading Club</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit">Submit Enrollment Request</button>
+        </form>
+      </div>
+
+      <!-- After School Club Form -->
+      <div class="tab-content" id="after-school-form">
+        <form id="after-school-enrollment-form">
+          <div class="form-success">
+            Thank you! Your After School Club enrollment request has been submitted successfully. Our team will contact
+            you shortly.
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="as-child-fname">Child's First Name *</label>
+              <input type="text" id="as-child-fname" name="childFirstName" required />
+            </div>
+            <div class="form-group">
+              <label for="as-child-sname">Child's Surname *</label>
+              <input type="text" id="as-child-sname" name="childSurname" required />
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="as-current-school">Current School *</label>
+            <input type="text" id="as-current-school" name="currentSchool" required />
+          </div>
+
+          <div class="form-group full">
+            <label for="as-dob">Date of Birth *</label>
+            <input type="date" id="as-dob" name="asDob" required />
+          </div>
+
+          <div class="form-group full">
+            <label for="as-address">Full Address *</label>
+            <input type="text" id="as-address" name="asAddress" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="as-parent-name">Parent/Guardian's Full Name *</label>
+              <input type="text" id="as-parent-name" name="asParentName" required />
+            </div>
+            <div class="form-group">
+              <label for="as-phone">Contact Number *</label>
+              <input type="tel" id="as-phone" name="asPhone" required />
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="as-program">Select After School Program *</label>
+            <select id="as-program" name="asProgram" required>
+              <option value="">Select Program</option>
+              <option value="Homework Club">Homework Club</option>
+              <option value="Keyboard/Piano Lessons">Keyboard/Piano Lessons</option>
+              <option value="Guitar Lessons">Guitar Lessons</option>
+              <option value="Art Club">Art Club</option>
+              <option value="African Beading Club">African Beading Club</option>
+              <option value="Coding Club">Coding Club</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit">Submit After School Enrollment</button>
+        </form>
+      </div>
+
+      <!-- Post-Secondary Form -->
+      <div class="tab-content" id="post-secondary-form">
+        <form id="post-secondary-enrollment-form">
+          <div class="form-success">
+            Thank you! Your Post-Secondary enrollment request has been submitted successfully. Our team will contact you
+            shortly.
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-first-name">First Name *</label>
+              <input type="text" id="ps-first-name" name="psFirstName" required />
+            </div>
+            <div class="form-group">
+              <label for="ps-last-name">Last Name *</label>
+              <input type="text" id="ps-last-name" name="psLastName" required />
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="ps-phone">Contact Number *</label>
+            <input type="tel" id="ps-phone" name="psPhone" required />
+          </div>
+
+          <div class="form-group full">
+            <label for="ps-background">Educational Background *</label>
+            <select id="ps-background" name="psBackground" required>
+              <option value="">Choose Option</option>
+              <option value="Secondary School Leaver">Secondary School Leaver</option>
+              <option value="Post Tertiary">Post Tertiary</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="ps-program">Choose Program *</label>
+            <select id="ps-program" name="psProgram" required>
+              <option value="">Select Program</option>
+              <option value="Business Start Up Training for Entrepreneurs">Business Start Up Training for Entrepreneurs
+              </option>
+              <option value="Customer Service Training for Corporate Businesses and Individuals">Customer Service
+                Training for Corporate Businesses and Individuals</option>
+              <option value="Certificate in Environmental Health and Safety">Certificate in Environmental Health and
+                Safety</option>
+              <option value="Food and Hygiene Certificate">Food and Hygiene Certificate</option>
+              <option value="Cosmetics Manufacturing Training">Cosmetics Manufacturing Training</option>
+              <option value="Liquid Soap Making">Liquid Soap Making</option>
+              <option value="Toilet Soap Making">Toilet Soap Making</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit">Submit Post-Secondary Enrollment</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-flat">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.jpeg" alt="Seven Ministries Logo">
+        <span>Seven Ministries International School</span>
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="enrolment.html">Enroll</a></li>
+      </ul>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <p>
+        <a href="mailto:admissions@sevenministriesint.com" class="footer-email">admissions@sevenministriesint.com</a> |
+        WhatsApp: +233500693889
+      </p>
+
+      <div class="footer-contact">
+        <span>© 2026 Seven Ministries International School. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

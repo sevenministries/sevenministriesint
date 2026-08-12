@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate & Sponsor a Child | Seven Ministries International School</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/donate-1.jpg",
+    "images/donate-2.jpg",
+    "images/donate-3.jpg"
+  ];
+
+  let index = 0;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => setSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+<body class="donation-page">
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Seven Ministries Logo" style="width:40px;height:40px;">
+      <div class="logo-text">
+        SEVEN MINISTRIES<br>INTERNATIONAL SCHOOL
+      </div>
+    </div>
+
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="curriculum.html" class="nav-link">Curriculum</a></li>
+      <li><a href="locations.html" class="nav-link">Locations</a></li>
+      <li><a href="training.html" class="nav-link">Training</a></li>
+      <li><a href="founder.html" class="nav-link">Founder</a></li>
+      <li><a href="enrolment.html" class="nav-link">Enrolment</a></li>
+      <li><a href="fee.html" class="nav-link">Fee Structure</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero">
+    <h2>Sponsor a Child. Change a Life.</h2>
+    <p>Your donation helps provide quality Christian education to children who need it most.</p>
+
+    <a href="#donate-section" class="btn primary-btn">
+      Donate Now
+    </a>
+  </div>
+  <div class="slider-dots"></div>
+</section>
+
+<!-- WHY DONATE -->
+<section class="content-section">
+  <h2 class="section-title">Why Sponsor a Child?</h2>
+
+  <div class="fee-options">
+    <p>✔ Help a child access quality British & American education</p>
+    <p>✔ Support learning materials, technology, and teachers</p>
+    <p>✔ Empower families who cannot afford full tuition</p>
+    <p>✔ Make a lasting spiritual and academic impact</p>
+  </div>
+</section>
+
+<!-- DONATION OPTIONS -->
+<section id="donate-section">
+  <h2 class="section-title">Donation Options</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Monthly Sponsorship</h3>
+      <p>Support a child’s education consistently every month.</p>
+      <strong>£50 / £100 / £200</strong><br><br>
+      <a href="contact.html" class="btn primary-btn">Sponsor Monthly</a>
+    </div>
+
+    <div class="card">
+      <h3>Full Tuition Support</h3>
+      <p>Cover part or full annual school fees for a child.</p>
+      <strong>From £500+</strong><br><br>
+      <a href="contact.html" class="btn primary-btn">Sponsor Tuition</a>
+    </div>
+
+    <div class="card">
+      <h3>One-Time Donation</h3>
+      <p>Make a one-off gift to support school programs and resources.</p>
+      <strong>Any Amount</strong><br><br>
+      <a href="contact.html" class="btn secondary-btn">Donate Once</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-flat">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <img src="logo.jpeg" alt="Seven Ministries Logo">
+      <span>Seven Ministries International School</span>
+    </div>
+
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <p>
+      <a href="mailto:admissions@sevenministriesint.com" class="footer-email">
+     admissions@sevenministriesint.com
+      </a>
+      | WhatsApp: +233500693889
+    </p>
+
+    <div class="footer-contact">
+      © 2026 Seven Ministries International School. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

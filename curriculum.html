@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum - Seven Ministries International School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/curriculum-1.jpg",
+    "images/curriculum-2.jpg",
+    "images/curriculum-3.jpg",
+    "images/curriculum-4.jpg"
+  ];
+
+  let index = 0;
+  let interval;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-icon"><img src="logo.jpeg" alt="Seven Ministries Logo" style="width: 40px; height: 40px;" /></div>
+      <div class="logo-text">
+        SEVEN MINISTRIES<br>INTERNATIONAL SCHOOL</br>
+      </div>
+
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="curriculum.html" class="nav-link">Curriculum</a></li>
+      <li><a href="locations.html" class="nav-link">Locations</a></li>
+      <li><a href="training.html" class="nav-link">Training</a></li>
+      <li><a href="founder.html" class="nav-link">Founder</a></li>
+      <li><a href="enrolment.html" class="nav-link">Enrolment</a></li>
+      <li><a href="fee.html" class="nav-link">Fee Structure</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <!--<button class="nav-btn">Apply Now</button>-->
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero">
+      <h2>International Curricula</h2>
+      <p>World-class British and American educational frameworks with Christian values integration</p>
+    </div>
+        <div class="slider-dots"></div>
+
+  </section>
+
+  <!-- Curriculum Overview -->
+  <section>
+    <h2 class="section-title">Our Educational Frameworks</h2>
+    <p class="section-description">Our Curriculum is based on the British and American System. Parents are given the option to choose between the American and British System.</p>
+    
+    <div class="curriculum-grid">
+      <div class="curriculum-card">
+        <div class="curriculum-icon">🇬🇧</div>
+        <h3>British System</h3>
+        <p>Following the rigorous British educational framework with emphasis on critical thinking and academic excellence.</p>
+
+      </div>
+      
+      <div class="curriculum-card">
+        <div class="curriculum-icon">🇺🇸</div>
+        <h3>American System</h3>
+        <p>Comprehensive American curriculum focusing on creativity, practical application, and leadership skills.</p>
+      </div>
+
+      <div class="curriculum-card">
+        <h3>Subjects</h3>
+        <ul class="subject-list">
+          <li>English</li>
+          <li>Mathematics</li>
+          <li>Science</li>
+          <li>Art and Design</li>
+          <li>Computer Science/Studies</li>
+          <li>Design and Technology</li>
+          <li>Languages</li>
+          <li>Music</li>
+          <li>Religious and Moral Education</li>        
+        </ul>
+
+      </div>
+        <div class="curriculum-card">
+        <h3>Cont...</h3>
+        <ul class="subject-list">
+          <li>Physical Education</li>
+          <li>Geography</li>
+          <li>Physics</li>
+          <li>Biology</li>
+          <li>Chemistry</li>
+          <li>English Language Arts (ELA)</li>
+          <li>Social Studies</li>
+          <li>Health</li>
+
+        </ul>
+      </div>
+
+
+
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+<footer class="footer-flat">
+
+
+
+  <div class="footer-inner">
+
+    <!-- Left: Logo -->
+    <div class="footer-brand">
+      <img src="logo.jpeg" alt="Seven Ministries Logo">
+      <span>Seven Ministries International School</span>
+    </div>
+
+    <!-- Center: Links -->
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="enrolment.html">Enroll</a></li>
+    </ul>
+    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+
+<p>
+  <a href="mailto:admissions@sevenministriesint.com" class="footer-email">
+    admissions@sevenministriesint.com
+  </a>
+  | WhatsApp: +233500693889
+</p>
+
+    <!-- Right: Contact -->
+    <div class="footer-contact">
+      <span>© 2026 Seven Ministries International School. All rights reserved.</span>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

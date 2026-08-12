@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-Secondary Training - Seven Ministries International School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/training-1.jpg",
+    "images/training-2.jpg",
+    "images/training-3.jpg"
+  ];
+
+  let index = 0;
+  let interval;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-icon"><img src="logo.jpeg" alt="Seven Ministries Logo" style="width: 40px; height: 40px;" /></div>
+      <div class="logo-text">
+        SEVEN MINISTRIES<br>INTERNATIONAL SCHOOL</br>
+      </div>
+
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="curriculum.html" class="nav-link">Curriculum</a></li>
+      <li><a href="locations.html" class="nav-link">Locations</a></li>
+      <li><a href="training.html" class="nav-link">Training</a></li>
+      <li><a href="founder.html" class="nav-link">Founder</a></li>
+      <li><a href="enrolment.html" class="nav-link">Enrolment</a></li>
+      <li><a href="fee.html" class="nav-link">Fee Structure</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <!--<button class="nav-btn">Apply Now</button>-->
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero">
+      <h2>Post-Secondary Training Programmes</h2>
+      <p>Professional development and career training for secondary school leavers and beyond</p>
+    </div>
+        <div class="slider-dots"></div>
+
+  </section>
+
+  <!-- Program Overview -->
+  <section>
+    <h2 class="section-title">Career Development Programs</h2>
+    <p class="section-description">We train secondary school leavers for specialized programs. After successful training, we offer employment to graduates.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Business Start Up Training</h3>
+        <p>For entrepreneurs looking to establish their own businesses.</p>
+        <ul class="subject-list">
+          <li>Business planning and strategy</li>
+          <li>Financial management basics</li>
+          <li>Marketing fundamentals</li>
+          <li>Legal requirements</li>
+        </ul>
+        <a href="enrolment.html#post-secondary" class="card-link">Enroll Now →</a>
+      </div>
+      <div class="card">
+        <h3>Customer Service Training</h3>
+        <p>For corporate businesses and individuals seeking excellence.</p>
+        <ul class="subject-list">
+          <li>Communication skills</li>
+          <li>Problem-solving techniques</li>
+          <li>Professional etiquette</li>
+          <li>Technology proficiency</li>
+        </ul>
+        <a href="enrolment.html#post-secondary" class="card-link">Enroll Now →</a>
+      </div>
+      <div class="card">
+        <h3>Environmental Health & Safety</h3>
+        <p>Certificate in Environmental Health and Safety practices.</p>
+        <ul class="subject-list">
+          <li>Occupational safety standards</li>
+          <li>Environmental regulations</li>
+          <li>Risk assessment methods</li>
+          <li>Emergency procedures</li>
+        </ul>
+        <a href="enrolment.html#post-secondary" class="card-link">Enroll Now →</a>
+      </div>
+      <div class="card">
+        <h3>Food & Hygiene Certificate</h3>
+        <p>Essential certification for food industry professionals.</p>
+        <ul class="subject-list">
+          <li>Food safety regulations</li>
+          <li>Hygiene practices</li>
+          <li>Storage and handling</li>
+          <li>Quality control</li>
+        </ul>
+        <a href="enrolment.html#post-secondary" class="card-link">Enroll Now →</a>
+      </div>
+      <div class="card">
+        <h3>Cosmetics Manufacturing</h3>
+        <p>Training in the production of cosmetic products.</p>
+        <ul class="subject-list">
+          <li>Product formulation</li>
+          <li>Manufacturing processes</li>
+          <li>Quality assurance</li>
+          <li>Regulatory compliance</li>
+        </ul>
+        <a href="enrolment.html#post-secondary" class="card-link">Enroll Now →</a>
+      </div>
+      <div class="card">
+        <h3>Liquid Soap Making</h3>
+        <p>Specialized training in liquid soap production techniques.</p>
+        <ul class="subject-list">
+          <li>Chemical formulations</li>
+          <li>Production methods</li>
+          <li>Packaging and labeling</li>
+          <li>Market distribution</li>
+        </ul>
+        <a href="enrolment.html#post-secondary" class="card-link">Enroll Now →</a>
+      </div>
+      <div class="card">
+        <h3>Toilet Soap Making</h3>
+        <p>Expertise in traditional and modern toilet soap manufacturing.</p>
+        <ul class="subject-list">
+          <li>Soap chemistry basics</li>
+          <li>Molding and shaping techniques</li>
+          <li>Additives and fragrances</li>
+          <li>Commercial production</li>
+        </ul>
+        <a href="enrolment.html#post-secondary" class="card-link">Enroll Now →</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+<footer class="footer-flat">
+
+
+  <div class="footer-inner">
+
+    <!-- Left: Logo -->
+    <div class="footer-brand">
+      <img src="logo.jpeg" alt="Seven Ministries Logo">
+      <span>Seven Ministries International School</span>
+    </div>
+
+    <!-- Center: Links -->
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="enrolment.html">Enroll</a></li>
+    </ul>
+    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+
+<p>
+  <a href="mailto:admissions@sevenministriesint.com" class="footer-email">
+    admissions@sevenministriesint.com
+  </a>
+  | WhatsApp: +233500693889
+</p>
+
+    <!-- Right: Contact -->
+    <div class="footer-contact">
+      <span>© 2026 Seven Ministries International School. All rights reserved.</span>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# IDE files
+.vscode/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+
+# Log files
+*.log
+
+# Node modules (if applicable)
+node_modules/
+
+# Build folders
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# Mail credentials - fill in real password only on the live server, never commit
+mail-config.php
+
+# Large image files that are for reference only
+website like this.jpeg
+website like this2.jpeg

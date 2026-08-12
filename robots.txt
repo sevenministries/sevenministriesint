@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sevenministriesschool.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 10
+
+# Directories to exclude (if any)
+Disallow: /private/
+Disallow: /admin/

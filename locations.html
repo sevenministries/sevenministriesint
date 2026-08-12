@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Locations - Seven Ministries International School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/locations-1.jpg",
+    "images/locations-2.jpg",
+    "images/locations-3.jpg"
+  ];
+
+  let index = 0;
+  let interval;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-icon"><img src="logo.jpeg" alt="Seven Ministries Logo" style="width: 40px; height: 40px;" /></div>
+      <div class="logo-text">
+        SEVEN MINISTRIES<br>INTERNATIONAL SCHOOL</br>
+      </div>
+
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="curriculum.html" class="nav-link">Curriculum</a></li>
+      <li><a href="locations.html" class="nav-link">Locations</a></li>
+      <li><a href="training.html" class="nav-link">Training</a></li>
+      <li><a href="founder.html" class="nav-link">Founder</a></li>
+      <li><a href="enrolment.html" class="nav-link">Enrolment</a></li>
+      <li><a href="fee.html" class="nav-link">Fee Structure</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <!--<button class="nav-btn">Apply Now</button>-->
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero">
+      <h2>Our School Locations</h2>
+      <p>Experience quality Christian education at our campuses in the UK and Ghana, or study from anywhere online</p>
+    </div>
+        <div class="slider-dots"></div>
+
+  </section>
+
+  <!-- Location Countries -->
+  <section>
+    <h2 class="section-title">Our School Locations</h2>
+    <p class="section-description">At Seven Ministries International School, we provide both purely online studies with live classroom experience as well as the opportunity to join our small classroom groups in the following locations if you prefer your child to attend school everyday:</p>
+    
+    <div class="location-container">
+      <div class="location-country">
+        <h3>🇬🇧 United Kingdom</h3>
+        <ul class="location-list">
+          <li>Homerton, London Borough of Hackney</li>
+          <li>Haggerston, London</li>
+        </ul>
+        <div class="contact-item" style="margin-top: 1.5rem;">
+          <div class="contact-icon"></div>
+          <div class="contact-details">
+            <h4>WhatsApp</h4>
+            <p>+447365407164</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-country">
+        <h3>🇬🇭 Ghana</h3>
+        <ul class="location-list">
+          <li>East Legon</li>
+          <li>.</li>
+        </ul>
+        <div class="contact-item" style="margin-top: 1.5rem;">
+          <div class="contact-icon"></div>
+          <div class="contact-details">
+            <h4>WhatsApp</h4>
+            <p>+233500693889</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+
+
+  <!-- Map Section -->
+  <section>
+    <h2 class="section-title">Find Our Campuses</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">🇬🇧</div>
+          <div class="contact-details">
+            <h3>United Kingdom</h3>
+            <p>London Borough of Hackney<br>Homerton & Haggerston Areas</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🇬🇭</div>
+          <div class="contact-details">
+            <h3>Ghana</h3>
+            <p>Greater Accra Region<br>East Legon</p>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.731841031339!2d-0.1969166851852369!3d5.556024895660052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9bc5b6b5f8e1%3A0x1c00815fd1a385a7!2sAccra%2C%20Ghana!5e0!3m2!1sen!2s!4v1650000000000" width="100%" height="300" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer class="footer-flat">
+
+
+  <div class="footer-inner">
+
+    <!-- Left: Logo -->
+    <div class="footer-brand">
+      <img src="logo.jpeg" alt="Seven Ministries Logo">
+      <span>Seven Ministries International School</span>
+    </div>
+
+    <!-- Center: Links -->
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="enrolment.html">Enroll</a></li>
+    </ul>
+    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+
+<p>
+  <a href="mailto:admissions@sevenministriesint.com" class="footer-email">
+    admissions@sevenministriesint.com
+  </a>
+  | WhatsApp: +233500693889
+</p>
+
+    <!-- Right: Contact -->
+    <div class="footer-contact">
+      <span>© 2026 Seven Ministries International School. All rights reserved.</span>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

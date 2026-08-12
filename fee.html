@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Seven Ministries International School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/about-1.jpg",
+    "images/about-2.jpg",
+    "images/about-3.jpg"
+  ];
+
+  let index = 0;
+  let interval;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+
+<body class="about-page">
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-icon"><img src="logo.jpeg" alt="Seven Ministries Logo" style="width: 40px; height: 40px;" /></div>
+      <div class="logo-text">
+        SEVEN MINISTRIES<br>INTERNATIONAL SCHOOL</br>
+      </div>
+
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="curriculum.html" class="nav-link">Curriculum</a></li>
+      <li><a href="locations.html" class="nav-link">Locations</a></li>
+      <li><a href="training.html" class="nav-link">Training</a></li>
+      <li><a href="founder.html" class="nav-link">Founder</a></li>
+      <li><a href="enrolment.html" class="nav-link">Enrolment</a></li>
+      <li><a href="fee.html" class="nav-link">Fee Structure</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <!--<button class="nav-btn">Apply Now</button>-->
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+  <section class="hero-section">
+
+    <div class="hero">
+      <h2>Our Tuition Fee Structure</h2>
+      <p>Flexible, and Accessible Education for All</p>
+    </div>
+    <div class="slider-dots"></div>
+
+  </section>
+  
+
+  <!--fee structure-->
+  <section>
+    <h2 class="section-title">Our Fee Structure is Based on Two Options:</h2>
+<div class="fee-options">
+  <p>
+    <strong>1.</strong> Pure online studies where your child joins live classes online via our online platform, with full access to recorded lessons 24/7.
+  </p>
+
+  <p>
+    <strong>2.</strong> Attending one of our physical locations where your child is supported by our staff to join lessons.
+  </p>
+</div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Years 1 – 6</h3>
+        <li>Admission fee – £100 (non-refundable)</li>
+            <li>Annual fees – £2500 (Online)</li><br>
+            <li>Annual fees – £4000 (Attended in one of our physical locations in Ghana)</li><br>
+            <li>Annual fees – £4800 (Attended in one of our physical locations in the UK)</li><br>
+            Deposit – £500
+      </div>
+      
+        <div class="card">
+        <h3>Years 7 - 9</h3>
+        <li>Admission fee – £100 (non-refundable)</li>
+            <li>Annual fees – £2400 (Online)</li><br>
+            <li>Annual fees – £4200 (Attended in one of our physical locations in Ghana)</li><br>
+            <li>Annual fees – £4800 (Attended in one of our physical locations in the UK)</li><br>
+            Deposit – £500
+      </div>
+
+              <div class="card">
+        <h3>Years 10 - 11</h3>
+        <li>Admission fee – £100 (non-refundable)</li>
+            <li>£400 per subject (online)</li><br>
+            Deposit – £500
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+<footer class="footer-flat">
+
+
+
+  <div class="footer-inner">
+
+    <!-- Left: Logo -->
+    <div class="footer-brand">
+      <img src="logo.jpeg" alt="Seven Ministries Logo">
+      <span>Seven Ministries International School</span>
+    </div>
+
+    <!-- Center: Links -->
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="enrolment.html">Enroll</a></li>
+    </ul>
+    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+
+<p>
+  <a href="mailto:admissions@sevenministriesint.com" class="footer-email">
+    admissions@sevenministriesint.com
+  </a>
+  | WhatsApp: +233500693889
+</p>
+
+    <!-- Right: Contact -->
+    <div class="footer-contact">
+      <span>© 2026 Seven Ministries International School. All rights reserved.</span>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
